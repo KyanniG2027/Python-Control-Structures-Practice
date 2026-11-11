@@ -99,11 +99,14 @@ print("Liftoff!")
 # Return the total. Do not include the negative number.
 # Example: [4, 5, -1, 10] should return 9.
 def total_until_negative(nums):
+    total = 0
+    i = 0
+    
     total += nums[i]
-    i += 1
+   
     while i < len(nums) and nums [i] >= 0:
-        print (total_until_negative([4, 5, -1, 10]))
-
+        print(total_until_negative([4, 5, -1, 10]))
+ 
 
 
 # Exercise 2.3
@@ -214,14 +217,18 @@ print_without_vowels("hello")
 # Hint: this needs a nested for loop. Use return as soon as you find a pair.
 # Example: has_pair_with_sum([2, 7, 11], 9) returns True (2 + 7 = 9).
 def has_pair_with_sum(nums, target):
-    pass
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+         if nums [i] + nums[j] == target:
+            return True
+          
 
 
 # Exercise 4.4
 # Conceptual question: In the nested loop from Exercise 4.3, if you used break
 # instead of return when you found a pair, what would happen? Would the
 # function still return the right answer? Write your answer below.
-# Your answer:
+# Your answer: break would return the inner loop and not the function. The function would keep going 
 
 
 # =====================================================================
@@ -234,6 +241,7 @@ def has_pair_with_sum(nums, target):
 def bugged_countdown():
     n = 5
     while n > 0:
+        n-=1
         print(n)
 
 
@@ -259,7 +267,15 @@ def bugged_prices():
 #   - otherwise prints the number itself
 # Hint: check the FizzBuzz case first. Think about why the order matters.
 def fizzbuzz(n):
-    pass
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
 
 
 # =====================================================================
