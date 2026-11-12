@@ -100,12 +100,14 @@ print("Liftoff!")
 # Example: [4, 5, -1, 10] should return 9.
 def total_until_negative(nums):
     total = 0
-    i = 0
+    n = 0
     
-    total += nums[i]
+    total += nums[n]
    
-    while i < len(nums) and nums [i] >= 0:
-        print(total_until_negative([4, 5, -1, 10]))
+    while n < len(nums) and nums [n] >= 0:
+        total = total + nums [n]
+        n = n + 1
+    
  
 
 
@@ -203,9 +205,9 @@ def index_of_first_negative(nums):
 # Use continue to skip the vowels.
 def print_without_vowels(word):
    for letter in word:
-    if letter.lower() in "aeiou":
-
-     print(letter)
+    if letter.lower() in "aeiou": 
+        continue
+    print(letter)
 
 print_without_vowels("hello")
 
